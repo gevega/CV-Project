@@ -1,16 +1,16 @@
+@import url("animations.css");
+
 :root {
-    --main-color-1: #00253e;
-    --main-color-2: #04619F;
-    --main-color-3: #278ca8;
+    --main-color-1: #140e6d;
+    --main-color-2: #0065a8;
+    --main-color-3: #008cb3;
     --main-color-4: #09b771;
     --alt-color-1: #00232a;
     --alt-color-2: #23232300;
-    --hover: #2b246a5d;
+    --hover: #001944;
     --shadow: black;
     --text-color: #ffffff;
 }
-
-
 
 * {
     padding: 0px;
@@ -45,26 +45,17 @@
     animation: rotation 1s linear infinite;
 }
 
-@keyframes rotation {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
 .nav {
     display: flex;
     position: fixed;
     width: 100%;
     height: 50px;
+    backdrop-filter: blur(10px);
     z-index: 999;
 }
 
 .active {
-    background: linear-gradient(45deg, var(--main-color-1), var(--main-color-2));
+    background-image: linear-gradient(60deg, var(--main-color-1), var(--main-color-2), var(--main-color-3));
     box-shadow: 2px 2px 7px black;
     transition: all 1s;
 }
@@ -77,14 +68,17 @@
 }
 
 /*-----  Logo Nav -----*/
-.nav-logo {
+.logo {
     display: flex;
+    justify-content: center;
+    align-items: center;
     width: 15%;
 }
 
-.nav-logo img {
-    height: 85%;
+.logo img {
+    height: 80%;
     cursor: pointer;
+    transition: all .2s;
 }
 
 .nav-col {
@@ -93,6 +87,13 @@
 
 .nav-col img {
     height: 100%;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.logo:hover,
+.nav-col img:hover {
+    transform: scale(1.05);
 }
 
 /*-----  Items Nav -----*/
@@ -102,7 +103,6 @@
 
 .nav-items ul {
     display: flex;
-    flex-direction: row;
     width: 100%;
 }
 
@@ -112,11 +112,10 @@
     cursor: pointer;
 }
 
-.nav-items ul li a {
+.nav-items ul li a, .logo a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
     height: 50px;
     transition: all .2s;
 }
@@ -131,19 +130,90 @@
     background-color: var(--hover);
 }
 
-/*-----  Cart Nav -----*/
-.nav-cart {
-    width: 15%;
-}
-
 /*-----  Banner -----*/
 .banner {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 100%;
     height: calc(100vh + 80px);
-    background-image: linear-gradient(to right top, var(--main-color-1), var(--main-color-2));
-    clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
+    background-image: linear-gradient(to right top, var(--main-color-1), var(--main-color-2), var(--main-color-3), var(--main-color-4));
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0% 100%);
     overflow: hidden;
+}
+
+.grid-banner {
+    display: grid;
+    grid-template-columns: 1fr 25% 1fr;
+    align-items: center;
+    width: 100%;
+    height: 50%;
+}
+
+.grid-banner .name,
+.grid-banner .info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.grid-banner .photo {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    height: 100%;
+    background-image: url(../img/ban/wall.jpg);
+    border: 5px solid white;
+    border-radius: 0 50px 0 0;
+    overflow-x: clip;
+    margin: 10px;
+}
+
+.grid-banner .photo img {
+    position: absolute;
+    height: 115%;
+}
+
+.grid-banner .photo .firma {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(#00000000, #000000be 60%);
+}
+
+.grid-banner h1 {
+    color: white;
+}
+
+.grid-banner .end {
+    text-align: end;
+}
+
+.grid-banner .first {
+    font-weight: 300;
+    font-size: 45px;
+}
+
+.grid-banner .last {
+    font-size: 50px;
+}
+
+.banner .more {
+    display: flex;
+    justify-content: center;
+    color: white;
+    animation: icon .5s infinite;
+}
+
+.banner .more .icon-hiper .more-icon {
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
 }
 
 .container {
@@ -178,7 +248,7 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    background-image: linear-gradient(60deg, var(--main-color-1), var(--main-color-2));
+    background-image: linear-gradient(to right top, var(--main-color-2), var(--main-color-3), var(--main-color-4));
     box-shadow: 0px 0px 20px #00000077;
     border-radius: 50px;
     padding: 15px;
@@ -210,7 +280,7 @@
 }
 
 .dark {
-    background-image: linear-gradient(to right top, var(--main-color-1), var(--main-color-2));
+    background-image: linear-gradient(to right top, var(--main-color-1), var(--main-color-2), var(--main-color-3), var(--main-color-4));
 }
 
 .card {
@@ -223,7 +293,7 @@
     margin: 25px;
     padding: 15px;
     border-radius: 20px;
-    background-image: linear-gradient(25deg, var(--main-color-1) 0%, var(--main-color-2) 20%, var(--main-color-2) 80%, var(--main-color-1) 100%);
+    background-image: linear-gradient(25deg, var(--main-color-3) 0%, var(--main-color-2) 20%, var(--main-color-2) 80%, var(--main-color-3) 100%);
     cursor: pointer;
     box-shadow: 0px 0px 20px #00000077, inset 0 0 0 6px white;
     transition: all .2s;
@@ -265,7 +335,7 @@
     width: 70%;
     font-size: 35px;
     text-align: center;
-    background-image: linear-gradient(60deg, var(--main-color-1) 20%, var(--main-color-2) 100%);
+    background-image: linear-gradient(60deg, var(--main-color-2) 20%, var(--main-color-3) 100%);
     border-radius: 50px;
     margin-bottom: 2%;
 }
@@ -284,7 +354,7 @@
 .card-alt {
     position: relative;
     width: 100%;
-    background-image: linear-gradient(60deg, var(--main-color-1), var(--main-color-2));
+    background-image: linear-gradient(to right top, var(--main-color-2), var(--main-color-3), var(--main-color-4));
     border-radius: 20px;
     box-shadow: 0px 0px 20px #00000077;
     overflow: hidden;
@@ -306,6 +376,30 @@
     transform: translateY(-100%);
 }
 
+.alt-info {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(25deg, var(--main-color-3) 0%, var(--main-color-2) 20%, var(--main-color-2) 80%, var(--main-color-3) 100%);
+    transform: translateY(100%);
+    z-index: 99;
+    transition: all .3s;
+}
+
+.alt-info p {
+    width: 85%;
+    text-align: center;
+    font-weight: 600;
+    color: white;
+}
+
+.active-info {
+    transform: translateY(0);
+}
 
 .card-alt .cert {
     display: flex;
@@ -342,6 +436,7 @@
 .card-alt .logo-cert {
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -357,7 +452,19 @@
 }
 
 .card-alt .logo-cert:hover {
-    opacity: .5;
+    opacity: .6;
+}
+
+.card-alt .arrow {
+    width: 20%;
+    text-align: center;
+    color: white;
+    font-size: 25px;
+}
+
+.card-alt .down {
+    position: absolute;
+    top: 0;
 }
 
 .flag {
@@ -486,7 +593,7 @@
     padding: 5px 25px;
     font-size: 20px;
     margin: 10px;
-    background-image: linear-gradient(60deg, var(--main-color-1), var(--main-color-2));
+    background-image: linear-gradient(60deg, var(--main-color-2), var(--main-color-3));
     color: white;
     box-shadow: 4px 4px 0px white;
     user-select: none;
@@ -508,8 +615,8 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    background-image: linear-gradient(var(--main-color-2), var(--main-color-1));
-    clip-path: polygon(0 20%, 100% 0, 100% 100%, 0% 100%);
+    background-image: linear-gradient(to right top, var(--main-color-1), var(--main-color-2), var(--main-color-3), var(--main-color-4));
+    clip-path: polygon(0 15%, 100% 0, 100% 100%, 0% 100%);
 }
 
 .footer-content {
@@ -517,7 +624,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 
 .grid-footer {
@@ -544,13 +651,15 @@
     width: 30%;
 }
 
-.grid-footer .footer-item img {
-    width: 100%;
+.grid-footer .footer-item .logo-footer {
+    color: white;
+    width: 80%;
+    font-size: 55px;
     cursor: pointer;
     transition: all .2s;
 }
 
-.grid-footer .footer-item img:hover {
+.grid-footer .footer-item .logo-footer:hover {
     scale: 1.1;
 }
 
@@ -562,12 +671,29 @@
 }
 
 @media screen and (max-width: 640px) {
-    .nav-logo {
+    .grid-banner .photo {
+        width: 90% !important;
+    }
+
+    .content {
+        --grid-item--max-width: calc(100% / 2) !important;
+    }
+
+    .footer-content h1 {
+        font-size: 14px !important;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .nav {
+        justify-content: flex-end;
+    }
+
+    .logo {
         display: flex;
         width: 60%;
-        margin-left: 20%;
     }
-    
+
     .nav-col {
         display: flex;
         width: 20%;
@@ -575,7 +701,7 @@
         align-items: center;
     }
 
-    .nav .nav-items{
+    .nav .nav-items {
         display: flex;
         position: absolute;
         width: 100%;
@@ -585,13 +711,13 @@
 
     .nav .nav-items .menu {
         position: absolute;
-        left: -100%;
+        right: -100%;
         transition: all .2s;
     }
 
-    .nav .nav-items .active-items{
+    .nav .nav-items .active-items {
         position: absolute;
-        left: 0;
+        right: 0;
         background-color: #002232d8;
     }
 
@@ -602,32 +728,71 @@
     .nav-items ul li {
         width: 100%;
         cursor: pointer;
-    }  
+    }
+
+    .banner {
+        justify-content: flex-start;
+        padding-top: 50px;
+    }
+
+    .grid-banner {
+        grid-template-columns: 100%;
+        grid-template-rows: 1fr 60% 1fr;
+        justify-items: center;
+        height: calc(85vh - 50px);
+    }
+
+    .grid-banner .photo {
+        display: flex;
+        width: 50%;
+    }
+
+    .grid-banner .photo img {
+        height: 100%;
+    }
+
+    .grid-banner .end {
+        text-align: center;
+    }
+
+    .grid-banner .first {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .grid-banner .last {
+        font-size: 45px;
+        text-align: center;
+    }
 
     .tittle h1 {
         font-size: 35px;
     }
-    
+
     .content {
-        --grid-item--max-width: calc(100% / 2);
+        --grid-item--max-width: calc(100% / 3);
         width: 90%;
-        grid-gap: 3%;
+        grid-gap: 2%;
     }
-    
+
     .item .text h1 {
         font-size: 26px;
         color: white;
+    }
+
+    .card {
+        margin: 10px;
     }
 
     .card-text h1 {
         width: 90%;
         font-size: 24px;
     }
-    
+
     .card-text h2 {
         font-size: 18px;
     }
-    
+
     .card-text h3 {
         font-size: 16px;
     }
@@ -637,12 +802,22 @@
         font-size: 16px;
         margin-bottom: 20px;
     }
-}
 
-@media screen and (max-height: 500px) {
+    .footer-content {
+        width: 90%;
+        margin-top: 10%;
+    }
 
-}
+    .grid-footer .footer-item a {
+        width: 40%;
+    }
 
-@media screen and (min-width: 640px) and (max-width: 1140px) {
+    .grid-footer .footer-item .logo-footer {
+        width: 100%;
+        font-size: 40px;
+    }
 
+    .footer-content h1 {
+        font-size: 18px;
+    }
 }

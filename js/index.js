@@ -1,14 +1,14 @@
-window.addEventListener('load',()=>{
-    const loader=document.querySelector('.div-loader')
-    loader.style.opacity=0
-    loader.style.visibility='hidden'
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.div-loader')
+    loader.style.opacity = 0
+    loader.style.visibility = 'hidden'
 })
 
-window.addEventListener('scroll', ()=>{
+window.addEventListener('scroll', () => {
     let height = (document.documentElement.clientHeight)
     let menu = document.querySelector('.nav')
 
-    if(window.scrollY > height - 40){
+    if (window.scrollY > height - 40) {
         menu.classList.add('active')
     } else {
         menu.classList.remove('active')
@@ -17,8 +17,16 @@ window.addEventListener('scroll', ()=>{
 
 let menu = document.querySelector('.nav-col')
 let items = document.querySelector('.menu')
-menu.addEventListener('click', (e)=>{
-    if(e.target.classList.contains('colapse')){
+menu.addEventListener('click', (e) => {
+    if (e.target.classList.contains('colapse')) {
         items.classList.toggle('active-items')
+    }
+})
+
+let arrow = document.querySelector('.cert')
+arrow.addEventListener('click', (e) => {
+    if (e.target.classList.contains('arrow')) {
+        let info = e.target.parentElement.parentElement.querySelector('.alt-info')
+        info.classList.toggle('active-info')
     }
 })

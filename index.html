@@ -7,17 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa&family=Lato:wght@100;300;400;900&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" href="img/nav/logo.ico">
+    <script src="https://kit.fontawesome.com/c137f4395e.js" crossorigin="anonymous"></script>
     <script defer src="js/index.js"></script>
-    <title>CV - Web</title>
+    <title>Bienvenidos | Vega Gonzalo</title>
 </head>
 
 <body>
     <header>
         <nav class="nav">
-            <div class="nav-content nav-logo">
-                <img src="" alt="" class="logo">
+            <div class="logo">
+                <a href="#banner">
+                    <img src="img/nav/firma.png" alt="">
+                </a>
             </div>
 
             <div class="nav-content nav-items">
@@ -65,8 +70,31 @@
             <span class="loader"></span>
         </div>
 
-        <section class="banner">
+        <section id='banner' class="banner">
+            <div class="grid-banner">
+                <div class="name">
+                    <h1 class="first end">Gonzalo Ezequiel</h1>
+                    <h1 class="last end">VEGA ECHEVERRÍA</h1>
+                </div>
 
+                <div class="photo">
+                    <img src="img/ban/perfil.png" alt="">
+                    <div class="firma">
+                        <img src="img/ban/firma.png" alt="" class="img-firma">
+                    </div>
+                </div>
+
+                <div class="info">
+                    <h1 class="first">Técnico en Informática</h1>
+                    <h1 class="last">PERSONAL & PROFESIONAL</h1>
+                </div>
+            </div>
+
+            <div class="more">
+                <a class="icon-hiper" href="#education">
+                    <i class="fa-sharp fa-solid fa-caret-down more-icon"></i>
+                </a>
+            </div>
         </section>
 
         <section id="education" class="container">
@@ -104,7 +132,7 @@
             <div class="content">
                 <div class="card">
                     <div class="card-img">
-                        <img src="img/experience/meli-alt.png" alt="" class="img">
+                        <img src="img/exp/meli-alt.png" alt="" class="img">
                     </div>
 
                     <div class="card-text">
@@ -116,7 +144,7 @@
 
                 <div class="card">
                     <div class="card-img">
-                        <img src="img/experience/carre-alt.png" alt="">
+                        <img src="img/exp/carre-alt.png" alt="">
                     </div>
                     <div class="card-text">
                         <h1>CARREFOUR</h1>
@@ -132,8 +160,14 @@
                 <h1>CERTIFICACIONES</h1>
             </div>
 
-            <div class="content">
+            <div class="content cert">
                 <div class="card-alt">
+                    <div class="alt-info">
+                        <i class="fa-solid fa-caret-down arrow down"></i>
+                        <p>Curso Full Stack Python, a cargo de Codo a Codo, cursado y finalizado en diciembre de 2022.
+                        </p>
+                    </div>
+
                     <div class="cert">
                         <h1>Full Stack Python</h1>
                     </div>
@@ -143,25 +177,17 @@
                     </div>
 
                     <div class="logo-cert">
-                        <img src="img/certificaciones/python.png" alt="">
+                        <img src="img/cert/python.png" alt="">
+                        <i class="fa-solid fa-caret-up arrow"></i>
                     </div>
                 </div>
 
                 <div class="card-alt">
-                    <div class="cert">
-                        <h1>Power Point Avanzado</h1>
+                    <div class="alt-info">
+                        <i class="fa-solid fa-caret-down arrow down"></i>
+                        <p>Certificación Microsoft Excel (Avanzado) a cargo de la UTN, realizado en octubre de 2018.</p>
                     </div>
 
-                    <div class="sub">
-                        <h2>Universidad Tecnológica Nacional</h2>
-                    </div>
-
-                    <div class="logo-cert">
-                        <img src="img/certificaciones/power.png" alt="">
-                    </div>
-                </div>
-
-                <div class="card-alt">
                     <div class="cert">
                         <h1>Excel Avanzado</h1>
                     </div>
@@ -171,11 +197,18 @@
                     </div>
 
                     <div class="logo-cert">
-                        <img src="img/certificaciones/excel.png" alt="">
+                        <img src="img/cert/excel.png" alt="">
+                        <i class="fa-solid fa-caret-up arrow"></i>
                     </div>
                 </div>
 
                 <div class="card-alt">
+                    <div class="alt-info">
+                        <i class="fa-solid fa-caret-down arrow down"></i>
+                        <p>Certificación Microsoft Word (Avanzado) a cargo de la UTN, realizado en noviembre de 2017.
+                        </p>
+                    </div>
+
                     <div class="cert">
                         <h1>Word Avanzado</h1>
                     </div>
@@ -185,7 +218,29 @@
                     </div>
 
                     <div class="logo-cert">
-                        <img src="img/certificaciones/word.png" alt="">
+                        <img src="img/cert/word.png" alt="">
+                        <i class="fa-solid fa-caret-up arrow"></i>
+                    </div>
+                </div>
+
+                <div class="card-alt">
+                    <div class="alt-info">
+                        <i class="fa-solid fa-caret-down arrow down"></i>
+                        <p>Certificación Microsoft Power Point (Avanzado) a cargo de la UTN, realizado en noviembre de
+                            2016.</p>
+                    </div>
+
+                    <div class="cert">
+                        <h1>Power Point Avanzado</h1>
+                    </div>
+
+                    <div class="sub">
+                        <h2>Universidad Tecnológica Nacional</h2>
+                    </div>
+
+                    <div class="logo-cert">
+                        <img src="img/cert/power.png" alt="">
+                        <i class="fa-solid fa-caret-up arrow"></i>
                     </div>
                 </div>
             </div>
@@ -198,42 +253,42 @@
 
             <div class="content">
                 <div class="flag">
-                    <img src="img/habilidades/office.png" alt="">
+                    <img src="img/skills/office.png" alt="">
                     <h1>Microsoft Office</h1>
                 </div>
 
                 <div class="flag">
-                    <img src="img/habilidades/illus.png" alt="">
+                    <img src="img/skills/illus.png" alt="">
                     <h1>Adobe Illustrator</h1>
                 </div>
 
                 <div class="flag">
-                    <img src="img/habilidades/photo.png" alt="">
+                    <img src="img/skills/photo.png" alt="">
                     <h1>Adobe Photoshop</h1>
                 </div>
 
                 <div class="flag">
-                    <img src="img/habilidades/mysql.png" alt="">
+                    <img src="img/skills/mysql.png" alt="">
                     <h1>MySQL</h1>
                 </div>
 
                 <div class="flag">
-                    <img src="img/habilidades/c.png" alt="">
+                    <img src="img/skills/c.png" alt="">
                     <h1>C | C++ | C#</h1>
                 </div>
 
                 <div class="flag">
-                    <img src="img/habilidades/java.png" alt="">
+                    <img src="img/skills/java.png" alt="">
                     <h1>JavaScript</h1>
                 </div>
 
                 <div class="flag">
-                    <img src="img/habilidades/photo.png" alt="">
+                    <img src="img/skills/photo.png" alt="">
                     <h1>Adobe Photoshop</h1>
                 </div>
 
                 <div class="flag">
-                    <img src="img/habilidades/mysql.png" alt="">
+                    <img src="img/skills/mysql.png" alt="">
                     <h1>MySQL</h1>
                 </div>
             </div>
@@ -247,11 +302,11 @@
             <div class="content">
                 <div class="page">
                     <div class="image">
-                        <img src="img/proyectos/gen.png" alt="">
+                        <img src="img/proy/gen.png" alt="">
                     </div>
 
                     <div class="page-logo">
-                        <img src="img/proyectos/gen-logo.png" alt="">
+                        <img src="img/proy/gen-logo.png" alt="">
                     </div>
 
                     <div class="buttons">
@@ -267,11 +322,11 @@
 
                 <div class="page">
                     <div class="image">
-                        <img src="img/proyectos/itel.png" alt="">
+                        <img src="img/proy/itel.png" alt="">
                     </div>
 
                     <div class="page-logo">
-                        <img src="img/proyectos/itel-logo.png" alt="">
+                        <img src="img/proy/itel-logo.png" alt="">
                     </div>
 
                     <div class="buttons">
@@ -295,24 +350,22 @@
                 <div class="grid-footer">
                     <div class="footer-item">
                         <a href="https://www.linkedin.com/in/gevegaeche/" target="_blank">
-                            <img src="img/footer/link.png" alt="">
+                            <i class="fa-brands fa-linkedin logo-footer"></i>
                         </a>
                     </div>
 
                     <div class="footer-item">
-                        <a href="" target="_blank">
-                            <img src="img/nav/adidas.png" alt="">
+                        <a href="#banner">
+                            <img src="img/ban/firma.png" alt="" class="logo-footer">
                         </a>
                     </div>
 
                     <div class="footer-item">
                         <a href="https://github.com/gevega" target="_blank">
-                            <img src="img/footer/git.png" alt="">
+                            <i class="fa-brands fa-github logo-footer"></i>
                         </a>
                     </div>
                 </div>
-
-
                 <h1>© Copyright 2023. Todos los derechos reservados. </h1>
             </div>
         </div>
